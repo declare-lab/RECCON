@@ -61,8 +61,10 @@ Example format in JSON:
             ]
         }
 
-   ]
-]
+    ]
+  ]
+
+}
 ```
 
 ## Causal Span Extraction
