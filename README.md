@@ -88,3 +88,7 @@ Then, evlaution can be carried out on DailyDialog or IEMOCAP as follows:
 `python eval_classification.py --model [rob|robl] --fold [1|2|3] --context --dataset [dailydialog|iemocap]`
 
 Without context models can be trained and evaluated by removing `--context` from the above commands.
+
+## Citation
+
+RECCON: A Dataset for Recognizing Emotion Cause in CONversations. Soujanya Poria, Navonil Majumder, Devamanyu Hazarika, Deepanway Ghosal, Rishabh Bhardwaj, Samson Yu Bai Jian, Romila Ghosh, Niyati Chhaya, Alexander Gelbukh, Rada Mihalcea. Arxiv (2020).
