@@ -12,7 +12,38 @@ Given an utterance U_t, labeled with emotion E_t, the task is to extract the cau
 
 The original annotated dataset can be found in the json files in the `data\` folder. The dataset with negative examples for the Causal Span Extraction and the Causal Entailment of Emotion tasks can be found in `data\qa\` and `data\classification\` folders respectively.
 
-### Description of the Data Files
+### Data Format
+
+The annotations and dialogues of the DailyDialog and IEMOCAP are available at [`data/*.json`](data/*.json).
+Each instance in the JSON file is allotted one identifier (e.g. "1\_60") which is a dictionary of the following items:   
+
+| Key                     | Value                                                                          | 
+| ----------------------- |:------------------------------------------------------------------------------:| 
+| `utterance`             | The text of the target utterance to classify.                                  | 
+| `speaker`               | Speaker of the target utterance.                                               | 
+| `context`               | List of utterances (in chronological order) preceding the target utterance.    | 
+| `context_speakers`      | Respective speakers of the context utterances.                                 | 
+| `sarcasm`               | Binary label for sarcasm tag.                                                  | 
+
+Example format in JSON:
+
+```json
+{
+  "1_60": {
+    "utterance": "It's just a privilege to watch your mind at work.",
+    "speaker": "SHELDON",
+    "context": [
+      "I never would have identified the fingerprints of string theory in the aftermath of the Big Bang.",
+      "My apologies. What's your plan?"
+    ],
+    "context_speakers": [
+      "LEONARD",
+      "SHELDON"
+    ],
+    "sarcasm": true
+  }
+}
+```
 
 ## Causal Span Extraction
 
