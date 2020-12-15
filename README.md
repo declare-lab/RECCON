@@ -10,39 +10,57 @@ Given an utterance U_t, labeled with emotion E_t, the task is to extract the cau
 
 ## Dataset
 
-The original annotated dataset can be found in the json files in the `data\` folder. The dataset with negative examples for the Causal Span Extraction and the Causal Entailment of Emotion tasks can be found in `data\qa\` and `data\classification\` folders respectively.
+The original annotated dataset can be found in the json files in the `data\original_annotation` folder. The dataset with negative examples for the Causal Span Extraction and the Causal Entailment of Emotion tasks can be found in `data\qa\` and `data\classification\` folders respectively.
 
 ### Data Format
 
-The annotations and dialogues of the DailyDialog and IEMOCAP are available at [`data/*.json`](data/*.json).
-Each instance in the JSON file is allotted one identifier (e.g. "1\_60") which is a dictionary of the following items:   
+The annotations and dialogues of the DailyDialog and IEMOCAP are available at [`data/original_annotation/*.json`](data/original_annotation/*.json).
+Each instance in the JSON file is allotted one identifier (e.g. "tr\_10180") which is a list having a dictionary of the following items for each utterance:   
 
-| Key                     | Value                                                                          | 
-| ----------------------- |:------------------------------------------------------------------------------:| 
-| `utterance`             | The text of the target utterance to classify.                                  | 
-| `speaker`               | Speaker of the target utterance.                                               | 
-| `context`               | List of utterances (in chronological order) preceding the target utterance.    | 
-| `context_speakers`      | Respective speakers of the context utterances.                                 | 
-| `sarcasm`               | Binary label for sarcasm tag.                                                  | 
+| Key                                | Value                                                                        | 
+| ---------------------------------- |:----------------------------------------------------------------------------:| 
+| `turn`                             | Utterance index starting from 1.                                             |
+| `speaker`                          | Speaker of the target utterance.                                             | 
+| `utterance`                        | The text of the utterance.                                                   | 
+| `emotion`                          | Emotion label of the utterance.                                              | 
+| `expanded emotion cause evidence`  | Utterance indices indicating the cause of a non neutral target utterance.    | 
+| `expanded emotion cause spans`     | Causal spans corresponding to the evidence utterances.                       |
+| `explanation`                      | Only if the annotator wrote any explanation about the emotion cause.         | 
+| `type`                             | The type of the emotion cause.                                               | 
+
 
 Example format in JSON:
 
 ```json
 {
-  "1_60": {
-    "utterance": "It's just a privilege to watch your mind at work.",
-    "speaker": "SHELDON",
-    "context": [
-      "I never would have identified the fingerprints of string theory in the aftermath of the Big Bang.",
-      "My apologies. What's your plan?"
-    ],
-    "context_speakers": [
-      "LEONARD",
-      "SHELDON"
-    ],
-    "sarcasm": true
-  }
-}
+  "tr_10180": 
+  [
+    [
+        {
+            "turn": 1,
+            "speaker": "A",
+            "utterance": "Johnny , I can't believe you would do that .",
+            "emotion": "surprise",
+            "explanation": "the speaker seees the mess B has made in the house?",
+            "expanded emotion cause evidence": [
+                "b"
+            ],
+            "expanded emotion cause span": [
+                "b"
+            ],
+            "type": [
+                "latent"
+            ]
+        },
+        {
+            "turn": 2,
+            "speaker": "B",
+            "utterance": "I know , Grandma , I just ...",
+            "emotion": "neutral"
+        }
+
+   ]
+]
 ```
 
 ## Causal Span Extraction
