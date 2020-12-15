@@ -10,7 +10,7 @@ Given an utterance U_t, labeled with emotion E_t, the task is to extract the cau
 
 ## Dataset
 
-The original annotated dataset can be found in the json files in the `data\original_annotation` folder. The dataset with negative examples for the Causal Span Extraction and the Causal Entailment of Emotion tasks can be found in `data\qa\` and `data\classification\` folders respectively.
+The original annotated dataset can be found in the json files in the `data/original_annotation` folder. The dataset with negative examples for the Causal Span Extraction and the Causal Entailment of Emotion tasks can be found in `data/qa/` and `data/classification/` folders respectively.
 
 ### Data Format
 
