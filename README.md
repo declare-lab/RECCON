@@ -63,7 +63,6 @@ Example format in JSON:
 
     ]
   ]
-
 }
 ```
 
