@@ -4,7 +4,7 @@ This repository contains the dataset and the pytorch implementations of the mode
 
 ## Overview of the Task
 
-![Alt text](figs/reccon.png?raw=true "Task Details")
+![Alt text](figs/RECCON.png?raw=true "Task Details")
 
 Given an utterance U_t, labeled with emotion E_t, the task is to extract the causal spans S_c from the conversational history H_{U_t}(including utterance U_t)that sufficiently represent the causes of emotion E_t.
 
