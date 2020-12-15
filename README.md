@@ -14,7 +14,7 @@ The original annotated dataset can be found in the json files in the `data\origi
 
 ### Data Format
 
-The annotations and dialogues of the DailyDialog and IEMOCAP are available at [`data/original_annotation/*.json`](data/original_annotation/*.json).
+The annotations and dialogues of the DailyDialog and IEMOCAP are available at [`data/original_annotation/*.json`](data/original_annotation/).
 Each instance in the JSON file is allotted one identifier (e.g. "tr\_10180") which is a list having a dictionary of the following items for each utterance:   
 
 | Key                                | Value                                                                        | 
