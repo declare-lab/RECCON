@@ -39,24 +39,26 @@ Example format in JSON:
         {
             "turn": 1,
             "speaker": "A",
-            "utterance": "Johnny , I can't believe you would do that .",
-            "emotion": "surprise",
-            "explanation": "the speaker seees the mess B has made in the house?",
-            "expanded emotion cause evidence": [
-                "b"
-            ],
-            "expanded emotion cause span": [
-                "b"
-            ],
-            "type": [
-                "latent"
-            ]
+            "utterance": "It's time for desserts ! Are you still hungry ?",
+            "emotion": "neutral"
         },
         {
             "turn": 2,
             "speaker": "B",
-            "utterance": "I know , Grandma , I just ...",
-            "emotion": "neutral"
+            "utterance": "I've always got room for something sweet !",
+            "emotion": "happiness",
+            "expanded emotion cause evidence": [
+                1,
+                2
+            ],
+            "expanded emotion cause span": [
+                "desserts",
+                "I've always got room for something sweet !"
+            ],
+            "type": [
+                "no-context",
+                "inter-personal"
+            ]
         }
 
    ]
