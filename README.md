@@ -2,9 +2,17 @@
 
 This repository contains the dataset and the pytorch implementations of the models from the paper Recognizing Emotion Cause in Conversations.
 
+## Overview of the Task
+
+![Alt text](figs/reccon.png?raw=true "Task Details")
+
+Given an utterance U_t, labeled with emotion E_t, the task is to extract the causal spans S_c from the conversational history H_{U_t}(including utterance U_t)that sufficiently represent the causes of emotion E_t.
+
 ## Dataset
 
 The original annotated dataset can be found in the json files in the `data\` folder. The dataset with negative examples for the Causal Span Extraction and the Causal Entailment of Emotion tasks can be found in `data\qa\` and `data\classification\` folders respectively.
+
+### Description of the Data Files
 
 ## Causal Span Extraction
 
