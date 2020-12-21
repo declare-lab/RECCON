@@ -1,4 +1,4 @@
-# Recognizing Emotion Cause in Conversations
+# RECCON: Recognizing Emotion Cause in Conversations
 
 This repository contains the dataset and the pytorch implementations of the models from the paper [RECCON: A Dataset for Recognizing Emotion Cause in CONversations](./RECCON.pdf).
 
@@ -91,4 +91,4 @@ Without context models can be trained and evaluated by removing `--context` from
 
 ## Citation
 
-RECCON: A Dataset for Recognizing Emotion Cause in CONversations. Soujanya Poria, Navonil Majumder, Devamanyu Hazarika, Deepanway Ghosal, Rishabh Bhardwaj, Samson Yu Bai Jian, Romila Ghosh, Niyati Chhaya, Alexander Gelbukh, Rada Mihalcea. Arxiv (2020).
+Recognizing Emotion Cause in Conversations. Soujanya Poria, Navonil Majumder, Devamanyu Hazarika, Deepanway Ghosal, Rishabh Bhardwaj, Samson Yu Bai Jian, Romila Ghosh, Niyati Chhaya, Alexander Gelbukh, Rada Mihalcea. Arxiv (2020).
