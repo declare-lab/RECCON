@@ -1,4 +1,4 @@
-# RECCON: Recognizing Emotion Cause in Conversations
+# RECCON: Recognizing Emotion Cause in CONversations
 
 This repository contains the dataset and the pytorch implementations of the models from the paper [Recognizing Emotion Cause in Conversations](./RECCON.pdf).
 
