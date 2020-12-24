@@ -1,5 +1,9 @@
 # RECCON: Recognizing Emotion Cause in CONversations
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/recognizing-emotion-cause-in-conversations-1/causal-emotion-entailment-on-reccon)](https://paperswithcode.com/sota/causal-emotion-entailment-on-reccon?p=recognizing-emotion-cause-in-conversations-1)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/recognizing-emotion-cause-in-conversations-1/recognizing-emotion-cause-in-conversations-on)](https://paperswithcode.com/sota/recognizing-emotion-cause-in-conversations-on?p=recognizing-emotion-cause-in-conversations-1)
+
 This repository contains the dataset and the pytorch implementations of the models from the paper [Recognizing Emotion Cause in Conversations](https://arxiv.org/pdf/2012.11820.pdf).
 
 ## Overview of the Task
