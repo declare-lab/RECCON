@@ -42,16 +42,16 @@ if __name__ == '__main__':
         save_dir    = 'outputs/' + model_id[model] + '-dailydialog-cls-without-context-fold' + fold + '/'
         result_file = 'outputs/' + model_id[model] + '-dailydialog-cls-without-context-fold' + fold + '/results.txt'
         dump_file   = 'outputs/' + model_id[model] + '-dailydialog-cls-without-context-fold' + fold + '/test_predictions.pkl'
-        x_train = pd.read_csv('data/classification/fold' + fold + '/dailydialog_classification_train_without_context.csv')
-        x_valid = pd.read_csv('data/classification/fold' + fold + '/dailydialog_classification_valid_without_context.csv')
-        x_test  = pd.read_csv('data/classification/fold' + fold + '/dailydialog_classification_test_without_context.csv')
+        x_train = pd.read_csv('data/subtask2/fold' + fold + '/dailydialog_classification_train_without_context.csv')
+        x_valid = pd.read_csv('data/subtask2/fold' + fold + '/dailydialog_classification_valid_without_context.csv')
+        x_test  = pd.read_csv('data/subtask2/fold' + fold + '/dailydialog_classification_test_without_context.csv')
     else:
         save_dir    = 'outputs/' + model_id[model] + '-dailydialog-cls-with-context-fold' + fold + '/'
         result_file = 'outputs/' + model_id[model] + '-dailydialog-cls-with-context-fold' + fold + '/results.txt'
         dump_file   = 'outputs/' + model_id[model] + '-dailydialog-cls-with-context-fold' + fold + '/test_predictions.pkl'
-        x_train = pd.read_csv('data/classification/fold' + fold + '/dailydialog_classification_train_with_context.csv')
-        x_valid = pd.read_csv('data/classification/fold' + fold + '/dailydialog_classification_valid_with_context.csv')
-        x_test  = pd.read_csv('data/classification/fold' + fold + '/dailydialog_classification_test_with_context.csv')
+        x_train = pd.read_csv('data/subtask2/fold' + fold + '/dailydialog_classification_train_with_context.csv')
+        x_valid = pd.read_csv('data/subtask2/fold' + fold + '/dailydialog_classification_valid_with_context.csv')
+        x_test  = pd.read_csv('data/subtask2/fold' + fold + '/dailydialog_classification_test_with_context.csv')
     
     if fold == '1':
         num_steps = int(27915/batch_size)

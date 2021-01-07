@@ -37,10 +37,10 @@ if __name__ == '__main__':
         
     if context == False:
         save_dir    = 'outputs/' + model_id[model] + '-dailydialog-cls-without-context-fold' + fold + '/'
-        x_test  = pd.read_csv('data/classification/fold' + fold + '/' + dataset + '_classification_test_without_context.csv')
+        x_test  = pd.read_csv('data/subtask2/fold' + fold + '/' + dataset + '_classification_test_without_context.csv')
     else:
         save_dir    = 'outputs/' + model_id[model] + '-dailydialog-cls-with-context-fold' + fold + '/'
-        x_test  = pd.read_csv('data/classification/fold' + fold + '/' + dataset + '_classification_test_with_context.csv')
+        x_test  = pd.read_csv('data/subtask2/fold' + fold + '/' + dataset + '_classification_test_with_context.csv')
     
     test_args = {
         'fp16': False,

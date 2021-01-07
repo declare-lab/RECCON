@@ -128,10 +128,10 @@ if __name__ == '__main__':
         
     if context == False:
         save_dir    = 'outputs/' + model_id[model] + '-dailydialog-qa-without-context-fold' + fold + '/'
-        x_test  = json.load(open('data/qa/fold' + fold + '/' + dataset + '_qa_test_without_context.json'))
+        x_test  = json.load(open('data/subtask1/fold' + fold + '/' + dataset + '_qa_test_without_context.json'))
     else:
         save_dir    = 'outputs/' + model_id[model] + '-dailydialog-qa-with-context-fold' + fold + '/'
-        x_test  = json.load(open('data/qa/fold' + fold + '/' + dataset + '_qa_test_with_context.json'))
+        x_test  = json.load(open('data/subtask1/fold' + fold + '/' + dataset + '_qa_test_with_context.json'))
     
     test_args = {
         'fp16': False,

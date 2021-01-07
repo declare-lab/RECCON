@@ -132,16 +132,16 @@ if __name__ == '__main__':
         save_dir    = 'outputs/' + model_id[model] + '-dailydialog-qa-without-context-fold' + fold + '/'
         result_file = 'outputs/' + model_id[model] + '-dailydialog-qa-without-context-fold' + fold + '/results.txt'
         dump_file   = 'outputs/' + model_id[model] + '-dailydialog-qa-without-context-fold' + fold + '/test_predictions.pkl'
-        x_train = json.load(open('data/qa/fold' + fold + '/dailydialog_qa_train_without_context.json'))
-        x_valid = json.load(open('data/qa/fold' + fold + '/dailydialog_qa_valid_without_context.json'))
-        x_test  = json.load(open('data/qa/fold' + fold + '/dailydialog_qa_test_without_context.json'))
+        x_train = json.load(open('data/subtask1/fold' + fold + '/dailydialog_qa_train_without_context.json'))
+        x_valid = json.load(open('data/subtask1/fold' + fold + '/dailydialog_qa_valid_without_context.json'))
+        x_test  = json.load(open('data/subtask1/fold' + fold + '/dailydialog_qa_test_without_context.json'))
     else:
         save_dir    = 'outputs/' + model_id[model] + '-dailydialog-qa-with-context-fold' + fold + '/'
         result_file = 'outputs/' + model_id[model] + '-dailydialog-qa-with-context-fold' + fold + '/results.txt'
         dump_file   = 'outputs/' + model_id[model] + '-dailydialog-qa-with-context-fold' + fold + '/test_predictions.pkl'
-        x_train = json.load(open('data/qa/fold' + fold + '/dailydialog_qa_train_with_context.json'))
-        x_valid = json.load(open('data/qa/fold' + fold + '/dailydialog_qa_valid_with_context.json'))
-        x_test  = json.load(open('data/qa/fold' + fold + '/dailydialog_qa_test_with_context.json'))
+        x_train = json.load(open('data/subtask1/fold' + fold + '/dailydialog_qa_train_with_context.json'))
+        x_valid = json.load(open('data/subtask1/fold' + fold + '/dailydialog_qa_valid_with_context.json'))
+        x_test  = json.load(open('data/subtask1/fold' + fold + '/dailydialog_qa_test_with_context.json'))
     
     if fold == '1':
         num_steps = int(27915/batch_size)
