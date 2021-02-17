@@ -29,11 +29,14 @@ def evaluate_results(text):
     lcs_all = []
     impos1, impos2, impos3, impos4 = 0, 0, 0, 0
     pos1, pos2, pos3 = 0, 0, 0
-    fscores, squad_fscores = [], []
+    fscores, squad_fscores = [], [] # f1 for postive (valid) instances
+    fscores_all, squad_fscores_all = [], [] # f1 for all instances
     
     for i, key in enumerate(['correct_text', 'similar_text', 'incorrect_text']):
         for item in text[key]:
             if i==0:
+                fscores_all.append(1)
+                squad_fscores_all.append(1)
                 if 'impossible' in item and text[key][item]['predicted'] == '':
                     impos1 += 1
                 elif 'span' in item:
@@ -44,8 +47,9 @@ def evaluate_results(text):
             elif i==1:
                 if 'impossible' in item:
                     impos2 += 1
+                    fscores_all.append(1)
+                    squad_fscores_all.append(1)
                 elif 'span' in item:
-                    
                     z = text[key][item]
                     if z['predicted'] != '':
                         longest_match = list(lcs(z['truth'], z['predicted']))[0]
@@ -57,14 +61,20 @@ def evaluate_results(text):
                         f = 2*p*r/(p+r)
                         fscores.append(f)
                         squad_fscores.append(compute_f1(z['truth'], z['predicted']))
+                        fscores_all.append(f)
+                        squad_fscores_all.append(compute_f1(z['truth'], z['predicted']))
                     else:
                         pos3 += 1
                         impos4 += 1
                         fscores.append(0)
                         squad_fscores.append(0)
+                        fscores_all.append(0)
+                        squad_fscores_all.append(0)
                                 
                     
-            if i==2:
+            elif i==2:
+                fscores_all.append(0)
+                squad_fscores_all.append(0)
                 if 'impossible' in item:
                     impos3 += 1
                 elif 'span' in item:
@@ -85,12 +95,16 @@ def evaluate_results(text):
     p4a = 'LCS F1 Score = {}%'.format(round(100*np.mean(fscores), 2))
     p4b = 'SQuAD F1 Score = {}%'.format(round(100*np.mean(squad_fscores), 2))
     p5 = 'No Match: {}/{} = {}%'.format(pos3, total_pos, round(100*pos3/total_pos, 2))
-    p6 = '\nNegative Samples'
+    p6 = '\nNegative Samples:'
     p7 = 'Inv F1 Score = {}%'.format(round(100*imf, 2))
     # p7a = 'Inv Recall: {}/{} = {}%'.format(impos2, impos2+impos3, round(100*imr, 2))
     # p7b = 'Inv Precision: {}/{} = {}%'.format(impos2, impos2+impos4, round(100*imp, 2))
     
-    p = '\n'.join([p1, p2, p3, p4a, p4b, p5, p6, p7])
+    p8 = '\nAll Samples:'
+    p9a = 'LCS F1 Score = {}%'.format(round(100*np.mean(fscores_all), 2))
+    p9b = 'SQuAD F1 Score = {}%'.format(round(100*np.mean(squad_fscores_all), 2))
+
+    p = '\n'.join([p1, p2, p3, p4a, p4b, p5, p6, p7, p8, p9a, p9b])
     return p
 
 
