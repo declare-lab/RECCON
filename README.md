@@ -4,6 +4,8 @@
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/recognizing-emotion-cause-in-conversations-1/recognizing-emotion-cause-in-conversations-on)](https://paperswithcode.com/sota/recognizing-emotion-cause-in-conversations-on?p=recognizing-emotion-cause-in-conversations-1)
 
+:fire::fire::fire: New baselines: visit [emotion-cause-extraction](https://github.com/declare-lab/conv-emotion/tree/master/emotion-cause-extraction)
+
 This repository contains the dataset and the pytorch implementations of the models from the paper [Recognizing Emotion Cause in Conversations](https://arxiv.org/pdf/2012.11820.pdf).
 
 ## Overview of the Task
